@@ -1,5 +1,15 @@
 function findFirstDuplicate(arr) {
-  // type your code here
+  const obj = {}
+
+  for(element of arr){
+        obj[element] ? obj[element]++ : obj[element] = 1
+
+    if(obj[element] > 1) {
+      return element;
+    }
+  }
+
+  return -1;
 }
 
 if (require.main === module) {
